@@ -1,0 +1,57 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.field {
+    width: 700px;
+    height: 700px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    display: grid;
+    grid-template-rows: 33.3% 33.3% 33.3%;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+    border: 3px solid;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px 2px black;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid;
+}
+
+.b1-1,
+.b1-2,
+.b1-3 {
+    border-top: ridge transparent;
+}
+
+.b1-3,
+.b2-3,
+.b3-3 {
+    border-right: ridge transparent;
+}
+
+.b1-1,
+.b2-1,
+.b3-1 {
+    border-left: ridge transparent;
+}
+
+.b3-1,
+.b3-2,
+.b3-3 {
+    border-bottom: ridge transparent;
+}

@@ -93,3 +93,7 @@ body {
     cursor: pointer;
     background-color: darkgreen;
 }
+
+.disable_block {
+    pointer-events: none;
+}

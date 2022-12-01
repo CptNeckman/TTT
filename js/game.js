@@ -1,4 +1,5 @@
 const cell = document.querySelectorAll(".cell");
+const field = document.getElementById("field");
 const restartGameButton = document.getElementById("restartGame");
 const cross = "X";
 const nought = "O";
@@ -37,9 +38,9 @@ function drawMarkers() {
     for (let row = 0; row < 3; row++) {
         for (let col = 0; col < 3; col++) {
             if (board_data[row][col] == 1) {
-                cell[(row * 3) + col].classList.add("cross")
+                cell[(row * 3) + col].classList.add("cross", "disable_block")
             } else if (board_data[row][col] == -1) {
-                cell[(row * 3) + col].classList.add("nought")
+                cell[(row * 3) + col].classList.add("nought", "disable_block")
             }
         }
     }
@@ -69,8 +70,10 @@ function endGame(winner) {
     const gameResultText = document.getElementById("gameResult");
     if (winner == 0) {
         gameResultText.innerText = "WOW, it's a TIE"
+        field.classList.add("disable_block")
     } else {
         gameResultText.innerText = "Player №" + (winner) + " WIN!"
+        field.classList.add("disable_block")
     }
 
     restartGameButton.style.visibility = 'visible'
@@ -86,7 +89,8 @@ function endGame(winner) {
             [0, 0, 0]
         ]
         cell.forEach(cell => {
-            cell.classList.remove('cross', 'nought');
+            cell.classList.remove('cross', 'nought', 'disable_block');
+            field.classList.remove('disable_block');
         });
         gameResultText.innerText = ""
         restartGameButton.style.visibility = 'hidden'
